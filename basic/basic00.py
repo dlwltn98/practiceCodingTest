@@ -1045,4 +1045,4 @@ def solution(numbers):
     for i in range(0, 10) :
         numbers = numbers.replace(arrStrNum[i], str(arrNum[i]))
 
-    return int(numbers)     
+    return int(numbers)  

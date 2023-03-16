@@ -1046,3 +1046,45 @@ def solution(numbers):
         numbers = numbers.replace(arrStrNum[i], str(arrNum[i]))
 
     return int(numbers)  
+
+"""
+000-79 ) 로그인 성공 
+ https://school.programmers.co.kr/learn/courses/30/lessons/120883
+
+"""
+def solution(id_pw, db):
+  result = 'fail'
+  
+  for i in db :
+    if i[0] == id_pw[0] :
+      result = 'wrong pw'
+      if i[1] == id_pw[1] :
+        result = 'login'
+
+  return result
+
+"""
+000-80 ) 소인수 분해 
+ https://school.programmers.co.kr/learn/courses/30/lessons/120852
+
+"""
+def solution(n):
+  answer = []
+
+  i = 2
+  while i <= n:
+    if n % i == 0:
+      answer.append(i)
+      n /= i
+    else:
+      i += 1
+
+  return list(dict.fromkeys(answer))
+
+"""
+000-81 ) 공 던지기 
+ https://school.programmers.co.kr/learn/courses/30/lessons/120843
+
+"""
+def solution(numbers, k):
+    return 2 * (k - 1) % numbers[-1] + 1

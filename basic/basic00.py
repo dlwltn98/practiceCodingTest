@@ -1088,3 +1088,30 @@ def solution(n):
 """
 def solution(numbers, k):
     return 2 * (k - 1) % numbers[-1] + 1
+
+"""
+000-82 ) 컨트롤 제트 
+ https://school.programmers.co.kr/learn/courses/30/lessons/120853
+
+"""
+def solution(s):
+  numArr = s.split(" ")
+
+  result = 0
+  for i in range(0,len(numArr)) :
+    if (numArr[i] == "Z") :
+      result -= int(numArr[i-1])
+    else :
+      result += int(numArr[i])
+  return result
+
+"""
+000-83 ) 구슬을 나누는 경우의 수  
+ https://school.programmers.co.kr/learn/courses/30/lessons/120840
+
+    파이썬 팩토리얼 계산 : math.factorial()
+"""
+import math
+
+def solution(balls, share):
+  return math.factorial(balls) / (math.factorial(balls-share) * math.factorial(share))

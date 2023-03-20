@@ -1115,3 +1115,26 @@ import math
 
 def solution(balls, share):
   return math.factorial(balls) / (math.factorial(balls-share) * math.factorial(share))
+
+"""
+000-84 ) 삼각형 완성의 조건(2)
+ https://school.programmers.co.kr/learn/courses/30/lessons/120868?language=python3
+
+"""
+def solution(sides):
+  # sides에 가장 긴변이 있을 때
+  resultArr = []
+
+  lastSide = 0
+  while lastSide <= max(sides):
+    if lastSide + min(sides) > max(sides) :
+      resultArr.append(lastSide)
+
+    lastSide += 1
+
+  lastSide = max(sides)+1
+  while lastSide < sum(sides) :
+    resultArr.append(lastSide)
+    lastSide += 1
+
+  return len(resultArr)

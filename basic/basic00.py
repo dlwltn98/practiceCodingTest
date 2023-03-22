@@ -1138,3 +1138,40 @@ def solution(sides):
     lastSide += 1
 
   return len(resultArr)
+
+
+"""
+000-85 ) 직사각형 넓이 구하기
+ https://school.programmers.co.kr/learn/courses/30/lessons/120860
+
+"""
+def solution(dots):
+  arrX = []
+  arrY = []
+
+  for i in dots :
+    arrX.append(i[0])
+    arrY.append(i[1])
+
+  return (max(arrX)-min(arrX)) * (max(arrY)-min(arrY))
+
+"""
+000-86 ) 외계어 사전
+ https://school.programmers.co.kr/learn/courses/30/lessons/120869
+
+"""
+def solution(spell, dic):
+  isEx = []
+  for str in dic :
+    cnt = 0
+    for char in spell :
+      if str.find(char) >= 0 :
+        cnt = cnt + 1
+          
+    if cnt == len(spell) :
+      isEx.append(str)
+
+  if len(isEx) == 0 :
+    return 2
+  else :
+    return 1

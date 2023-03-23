@@ -1175,3 +1175,42 @@ def solution(spell, dic):
     return 2
   else :
     return 1
+  
+"""
+000-87 ) 캐릭터 좌표
+ https://school.programmers.co.kr/learn/courses/30/lessons/120861
+
+"""
+def solution(keyinput, board):
+  dic = {"up":1, "down":-1, "left":-1, "right":1}
+
+  maxPosX = (board[0]-1)/2;
+  maxPosY = (board[1]-1)/2;
+
+  resultPos = [0,0]
+  for i in keyinput : 
+    if i == "up" or i == "down" :
+      if abs(resultPos[1]+dic[i]) <= maxPosY :
+        resultPos[1] += dic[i]
+
+    if i == "left" or i == "right" :
+      if abs(resultPos[0]+dic[i]) <= maxPosX :
+        resultPos[0] += dic[i]
+        
+  return resultPos
+
+"""
+000-88 ) 치킨쿠폰
+ https://school.programmers.co.kr/learn/courses/30/lessons/120884
+
+"""
+def solution(chicken):
+  coupon = chicken
+  chickenCnt = 0
+
+  while (coupon >= 10) :
+    calc = coupon // 10
+    chickenCnt += calc
+    coupon = calc + (coupon%10)
+
+  return chickenCnt

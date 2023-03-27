@@ -1253,3 +1253,6 @@ def solution(a, b):
     return  1
   else :
     return 2
+  
+
+  

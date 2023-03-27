@@ -1214,3 +1214,42 @@ def solution(chicken):
     coupon = calc + (coupon%10)
 
   return chickenCnt
+
+"""
+000-89 ) 등수 매기기
+ https://school.programmers.co.kr/learn/courses/30/lessons/120882
+
+"""
+def solution(score):
+  result = []
+  for i in score :
+    cnt = 1
+    for j in score :
+      if sum(i) < sum(j) :
+        cnt += 1
+    result.append(cnt)
+    
+  return result
+
+"""
+000-90 ) 유한소수 판별하기
+ https://school.programmers.co.kr/learn/courses/30/lessons/120878
+    
+    최대 공약수 구하는 함수 : math.gcd(a,b)
+    ** 유클리드 호제법
+"""
+import math
+
+def solution(a, b):
+  b //= math.gcd(a,b)
+
+  while b % 5 == 0 :
+    b //= 5
+
+  while b % 2 == 0 :
+    b //= 2
+
+  if b == 1 :
+    return  1
+  else :
+    return 2
